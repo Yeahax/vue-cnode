@@ -1,6 +1,6 @@
-# vuez
+#  Vue-cnode
 
-> vuex test
+> Vue-cnode
 
 ## Build Setup
 
