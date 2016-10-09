@@ -42,22 +42,66 @@
 </template>
 
 <script>
+
+import $ from 'jquery'
+
+
 export default {
 	data(){
 		return {
-			item:[]
+			item:[],
+			index: 1
 		}
 	},
 	
 	ready() {
-		this.$http.get('topics').then((response) => {
-		    // success callback
+		
+		this.post()
 
 
-		    this.item = response.data.data
-		}, (response) => {
-		    // error callback
-		});
+
+	},
+	methods: {
+		post:function(){
+			
+			var resource = this.$resource('topics?page={page}');
+
+			resource.get({page: this.index}).then((response) => {
+			    // success callback
+
+			    var that = this
+
+			    if(this.index == 1){
+			    	this.item = response.data.data
+			    }else{
+			    	this.item = that.item.concat(response.data.data)
+			    }
+
+
+
+			    
+ 
+			    
+			    $(document).scroll(function(argument) {
+
+			    	let fileHeight =  $(document).height();
+			    	let top = $(document).scrollTop() + $(window).height()
+
+			    	//如果滚动到底
+			    	if(fileHeight == top){
+			    		that.index++
+
+			    		that.post()
+
+			    	}
+
+			    })
+
+
+			}, (response) => {
+			    // error callback
+			});
+		}
 	}
 }
 </script>
