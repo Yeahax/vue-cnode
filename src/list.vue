@@ -6,31 +6,20 @@
 			<a class="user_avatar pull-left" href="/user/Samurais">
 				<img v-bind:src="v.author.avatar_url">
 			</a>
-
-
-
 			<span class="reply_count pull-left">
-	    <span class="count_of_replies" title="回复数">
-	      {{v.reply_count}}
-	    </span>
-			<span class="count_seperator">/</span>
-			<span class="count_of_visits" title="点击数">
-	      {{v.visit_count}}
-	    </span>
+				<span class="count_of_replies" title="回复数">
+					{{v.reply_count}}
+				</span>
+				<span class="count_seperator">/</span>
+				<span class="count_of_visits" title="点击数">
+					{{v.visit_count}}
+				</span>
 			</span>
-
-
-
 			<div class="topic_title_wrapper">
-
-
 				<span class="put_top" v-if="v.top">置顶</span>
-
-
-
 				<a class="topic_title" v-bind:href="'/topic/'+ v.id" title="{{v.title}}">
-      {{v.title}}
-    </a>
+					{{v.title}}
+				</a>
 
 			</div>
 		</div>
@@ -43,55 +32,54 @@
 
 <script>
 
-import $ from 'jquery'
+	import $ from 'jquery'
 
 
-export default {
-	data(){
-		return {
-			item:[],
-			index: 1
-		}
-	},
-	
-	ready() {
-		
-		this.post()
+	export default {
+		data(){
+			return {
+				item:[],
+				index: 1
+			}
+		},
+
+		ready() {
+
+			this.post()
 
 
 
-	},
-	methods: {
-		post:function(){
-			
-			var resource = this.$resource('topics?page={page}');
+		},
+		methods: {
+			post:function(){
 
-			resource.get({page: this.index}).then((response) => {
+				let resource = this.$resource('topics?page={page}');
+
+				resource.get({page: this.index}).then((response) => {
 			    // success callback
 
-			    var that = this
 
 			    if(this.index == 1){
 			    	this.item = response.data.data
 			    }else{
-			    	this.item = that.item.concat(response.data.data)
+			    	this.item = this.item.concat(response.data.data)
 			    }
 
 
 
 			    
- 
+
 			    
-			    $(document).scroll(function(argument) {
+			    $(document).scroll(()=> {
 
 			    	let fileHeight =  $(document).height();
 			    	let top = $(document).scrollTop() + $(window).height()
 
 			    	//如果滚动到底
 			    	if(fileHeight == top){
-			    		that.index++
+			    		this.index++
 
-			    		that.post()
+			    		this.post()
 
 			    	}
 
@@ -101,7 +89,7 @@ export default {
 			}, (response) => {
 			    // error callback
 			});
+			}
 		}
 	}
-}
 </script>
