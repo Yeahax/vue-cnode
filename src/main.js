@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import App from './App.vue'
 import resource from 'vue-resource'
-import VueRouter from 'vue-router'
+import Router from 'vue-router'
 
 import index from './pages/index.vue'
 
 Vue.use(resource)
-Vue.use(VueRouter)
+Vue.use(Router)
 
 
 
@@ -16,7 +16,7 @@ Vue.http.options.root = 'https://cnodejs.org/api/v1';
 
 
 
-var router = new VueRouter({
+var router = new Router({
 	hashbang: false,
 	history:true
 })
