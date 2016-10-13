@@ -59,31 +59,31 @@
 			    // success callback
 
 
-			    if(this.index == 1){
-			    	this.item = response.data.data
-			    }else{
-			    	this.item = this.item.concat(response.data.data)
-			    }
+				    if(this.index == 1){
+				    	this.item = response.data.data
+				    }else{
+				    	this.item = this.item.concat(response.data.data)
+				    }
 
 
 
-			    
+				    
 
-			    
-			    $(document).scroll(()=> {
+				    
+				    $(document).scroll(()=> {
 
-			    	let fileHeight =  $(document).height();
-			    	let top = $(document).scrollTop() + $(window).height()
+				    	let fileHeight =  $(document).height();
+				    	let top = $(document).scrollTop() + $(window).height()
 
-			    	//如果滚动到底
-			    	if(fileHeight == top){
-			    		this.index++
+				    	//如果滚动到底
+				    	if(fileHeight == top){
+				    		this.index++
 
-			    		this.post()
+				    		this.post()
 
-			    	}
+				    	}
 
-			    })
+				    })
 
 
 			}, (response) => {
