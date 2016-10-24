@@ -4,6 +4,7 @@ import resource from 'vue-resource'
 import Router from 'vue-router'
 
 import index from './pages/index.vue'
+import start from './pages/start.vue'
 
 Vue.use(resource)
 Vue.use(Router)
@@ -24,6 +25,9 @@ var router = new Router({
 router.map({
   '/': {
     component: index
+  },
+  'start':{
+  	component: start
   }
 })
 
