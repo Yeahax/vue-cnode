@@ -5,6 +5,7 @@ import Router from 'vue-router'
 
 import index from './pages/index.vue'
 import start from './pages/start.vue'
+import api from './pages/api.vue'
 
 Vue.use(resource)
 Vue.use(Router)
@@ -28,6 +29,9 @@ router.map({
   },
   'start':{
   	component: start
+  },
+  'api':{
+  	component: api
   }
 })
 
