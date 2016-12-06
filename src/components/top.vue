@@ -16,10 +16,10 @@
         <ul class="nav pull-right">
           <li><a v-link="{ path: '/' }">首页</a></li>
 
-          <li><a v-link="{ path: 'start' }">新手入门</a></li>
-          <li><a v-link="{ path: 'api' }">API</a></li>
+          <li><a v-link="{ path: '/start' }">新手入门</a></li>
+          <li><a v-link="{ path: '/api' }">API</a></li>
 
-          <li><a v-link="{ path: 'about' }">关于</a></li>
+          <li><a v-link="{ path: '/about' }">关于</a></li>
 
 
           <li><a href="/signup">注册</a></li>
