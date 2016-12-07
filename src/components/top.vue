@@ -22,8 +22,8 @@
           <li><a v-link="{ path: '/about' }">关于</a></li>
 
 
-          <li><a href="/signup">注册</a></li>
-          <li><a href="/signin">登录</a></li>
+          <li><a v-link="{ path: '/signout' }">注册</a></li>
+          <li><a v-link="{ path: '/signin' }">登录</a></li>
 
         </ul>
         <a class="btn btn-navbar" id="responsive-sidebar-trigger">

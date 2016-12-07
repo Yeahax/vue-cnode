@@ -8,6 +8,8 @@ import start from './pages/start.vue'
 import api from './pages/api.vue'
 import about from './pages/about.vue'
 import signin from './pages/signin.vue'
+import signout from './pages/signout.vue'
+
 
 Vue.use(resource)
 Vue.use(Router)
@@ -40,6 +42,9 @@ router.map({
   },
   '/signin':{
   	component: signin
+  },
+  '/signout':{
+  	component: signout
   }
 })
 
