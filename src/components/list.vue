@@ -17,7 +17,7 @@
 			</span>
 			<div class="topic_title_wrapper">
 				<span class="put_top" v-if="v.top">置顶</span>
-				<a class="topic_title" v-bind:href="'/topic/'+ v.id" title="{{v.title}}">
+				<a class="topic_title" v-bind:href="'/detail?id='+ v.id" title="{{v.title}}">
 					{{v.title}}
 				</a>
 
@@ -67,9 +67,9 @@
 
 
 
-				    
 
-				    
+
+
 				    $(document).scroll(()=> {
 
 				    	let fileHeight =  $(document).height();
@@ -86,9 +86,9 @@
 				    })
 
 
-			}, (response) => {
-			    // error callback
-			});
+				}, (response) => {
+				    // error callback
+				});
 			}
 		}
 	}
