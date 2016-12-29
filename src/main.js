@@ -9,6 +9,7 @@ import api from './pages/api.vue'
 import about from './pages/about.vue'
 import signin from './pages/signin.vue'
 import signout from './pages/signout.vue'
+import detail from './pages/detail.vue'
 
 
 Vue.use(resource)
@@ -45,6 +46,9 @@ router.map({
   },
   '/signout':{
   	component: signout
+  },
+  '/detail':{
+    component: detail
   }
 })
 
